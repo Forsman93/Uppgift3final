@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bbf2d3963ec6483a9872605f3ccfc6e6" Name="Diagram1">
+        <EntityTypeShape EntityType="DataBankModel.BackEndSkills" Width="1.5" PointX="9.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.Customer" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.CV" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.Education" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.EmploymentHistory" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.Freelancer" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.FrontEndSkills" Width="1.5" PointX="9.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.Knowledge" Width="1.5" PointX="7.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.Languages" Width="1.5" PointX="9.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBankModel.PersonalInformation" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="DataBankModel.FK_BackEndSkills_Knowledge" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_Customer_PersonalInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_CV_Freelancer" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_Education_CV" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_EmploymentHistory_CV" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_Knowledge_CV" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_Freelancer_CV" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_FrontEndSkills_Knowledge" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBankModel.FK_Languages_Knowledge" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
