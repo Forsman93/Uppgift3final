@@ -1,0 +1,67 @@
+﻿@model WebApplication1.Models.PersonalInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Mitt Konto</h2>
+
+<div>
+    <h4>Första delen av ditt CV, spännande va? Om du vill ändra nånting, kan du klicka på ändra. Annars klicka 
+    på nästa, och då kommer du fram till nästa delen av ditt cv!</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserGroup)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID }) |
+    @Html.ActionLink("Tillbaka till din hemsida!", "Index", "Profile")
+</p>
