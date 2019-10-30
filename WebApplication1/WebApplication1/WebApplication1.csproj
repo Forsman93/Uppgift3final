@@ -131,6 +131,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\CVBodyController.cs" />
     <Compile Include="Controllers\CVsController.cs" />
+    <Compile Include="Controllers\EducationsController.cs" />
     <Compile Include="Controllers\FreelancersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -265,6 +266,10 @@
     <Content Include="Views\ProfileCV\Edit.cshtml" />
     <Content Include="Views\CVBody\Details.cshtml" />
     <Content Include="Views\CVBody\Edit.cshtml" />
+    <Content Include="Views\Educations\Create.cshtml" />
+    <Content Include="Views\Educations\Details.cshtml" />
+    <Content Include="Views\Educations\Edit.cshtml" />
+    <Content Include="Views\Educations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
