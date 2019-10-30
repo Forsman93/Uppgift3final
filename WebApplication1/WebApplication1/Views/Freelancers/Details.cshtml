@@ -1,0 +1,26 @@
+﻿@model WebApplication1.Models.Freelancer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Freelancer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalInformation.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonalInformation.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Freelancer_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
