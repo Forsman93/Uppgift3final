@@ -1,0 +1,66 @@
+﻿@model WebApplication1.Models.PersonalInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Mitt Konto</h2>
+
+<div>
+    <h4>Här är dina kontaktuppgifter uppgifter, det är bara att klicka på ändra att ändra dem!</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserGroup)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID }) |
+    @Html.ActionLink("Tillbaka till din hemsida!", "Index")
+</p>
