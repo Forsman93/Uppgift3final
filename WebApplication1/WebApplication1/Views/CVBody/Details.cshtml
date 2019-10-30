@@ -1,0 +1,74 @@
+﻿@model WebApplication1.Models.CV
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DriversLicense)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DriversLicense)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CityOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoreAbilities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoreAbilities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MediaLinks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaLinks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Freelancer.Freelancer_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Freelancer.Freelancer_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Tillbaka till din kontaktinformation", "/Details/1", "ProfileCV") |
+    @Html.ActionLink("Ändra", "Edit", new { id = Model.CV_ID }) |
+</p>
