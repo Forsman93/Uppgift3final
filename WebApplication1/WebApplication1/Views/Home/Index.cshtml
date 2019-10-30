@@ -1,30 +1,32 @@
 ﻿
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Välkomen till den bästa networking webbsida som finns på nätet idag.</h1>
+    <p class="lead">
+        Syftet med webbplatsen är att
+        underlätta arbetet att anställa ny personal. Det ska vara snabbt och enkelt för en kund att möta och
+        jobba med talanger inom olika kompetensområden.
+        <br />
+        <br />
+        Som frilansare ska man
+        kunna lägga till sitt CV i systemet, och som kund ska man kunna söka bland dessa utifrån olika
+        parametrar och välja de talanger som man vill intervjua/träffa.
+    </p>
+    
 </div>
-
+@*Need to add a log in page between home page and freelance page? Or is it ok to just click directly to their pages*@
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started </h2>
+    <div class="col-md-6">
+        <h2>Är du en frilansare? </h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Här ska du klicka att logga in till dina sidor!
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Login", "Index", "Profile")</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="col-md-6">
+        <h2>Är du en kund till oss?</h2>
+        <p>Här ska du logga in att ändra din profil och att hitta nya talangar till ditt företag!</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Login", "Index", "Login")</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily start hating computers by working with them</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        <p>i hate computers again</p>
-    </div>
+    
 </div>

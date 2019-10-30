@@ -257,8 +257,6 @@
     <Content Include="Views\CVs\Details.cshtml" />
     <Content Include="Views\CVs\Edit.cshtml" />
     <Content Include="Views\CVs\Index.cshtml" />
-    <Content Include="Views\Profile\Create.cshtml" />
-    <Content Include="Views\Profile\Delete.cshtml" />
     <Content Include="Views\Profile\Details.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
