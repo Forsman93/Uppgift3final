@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BackEndSkillsController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\CVBodyController.cs" />
@@ -134,7 +135,10 @@
     <Compile Include="Controllers\EducationsController.cs" />
     <Compile Include="Controllers\EmploymentHistoriesController.cs" />
     <Compile Include="Controllers\FreelancersController.cs" />
+    <Compile Include="Controllers\FrontEndSkillsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KnowledgesController.cs" />
+    <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProfileCVController.cs" />
@@ -275,6 +279,11 @@
     <Content Include="Views\Educations\Delete.cshtml" />
     <Content Include="Views\Educations\Edit.cshtml" />
     <Content Include="Views\Educations\Index.cshtml" />
+    <Content Include="Views\Languages\Details.cshtml" />
+    <Content Include="Views\Languages\Edit.cshtml" />
+    <Content Include="Views\Knowledges\Details.cshtml" />
+    <Content Include="Views\FrontEndSkills\Edit.cshtml" />
+    <Content Include="Views\BackEndSkills\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

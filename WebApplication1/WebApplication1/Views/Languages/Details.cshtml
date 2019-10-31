@@ -1,0 +1,60 @@
+﻿@model WebApplication1.Models.Languages
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Språk</h2>
+
+<div>
+    <h4>Språk</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Swedish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Swedish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.German)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.German)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spanish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spanish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Ändra", "Edit", new { id = Model.Languages_ID }) |
+    @Html.ActionLink("Tillbaka till förra sidan", "Index", "EmploymentHistories")    |
+    @Html.ActionLink("Nästa sidan, kompetens", "/Details/2", "Knowledges" )
+</p>
