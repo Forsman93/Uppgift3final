@@ -11,7 +11,8 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Data.Entity;
+
     public partial class CV
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -38,5 +39,10 @@ namespace WebApplication1.Models
         public virtual ICollection<EmploymentHistory> EmploymentHistory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Knowledge> Knowledge { get; set; }
+    }
+
+    public class CVDBcontext : DbContext
+    {
+        public DbSet<CV> CVs { get; set; }
     }
 }

@@ -10,112 +10,112 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class CVsController : Controller
+    public class BackEndSkillsController : Controller
     {
         private DataBankEntities db = new DataBankEntities();
 
-        // GET: CVs
+        // GET: BackEndSkills
         public ActionResult Index()
         {
-            var cV = db.CV.Include(c => c.Freelancer);
-            return View(cV.ToList());
+            var backEndSkills = db.BackEndSkills.Include(b => b.Knowledge);
+            return View(backEndSkills.ToList());
         }
 
-        // GET: CVs/Details/5
+        // GET: BackEndSkills/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CV cV = db.CV.Find(id);
-            if (cV == null)
+            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
+            if (backEndSkills == null)
             {
                 return HttpNotFound();
             }
-            return View(cV);
+            return View(backEndSkills);
         }
 
-        // GET: CVs/Create
+        // GET: BackEndSkills/Create
         public ActionResult Create()
         {
-            ViewBag.Freelancer_ID = new SelectList(db.Freelancer, "Freelancer_ID", "Freelancer_ID");
+            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID");
             return View();
         }
 
-        // POST: CVs/Create
+        // POST: BackEndSkills/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CV_ID,Freelancer_ID,DriversLicense,Nationality,CityOfBirth,Profile,CoreAbilities,MediaLinks")] CV cV)
+        public ActionResult Create([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
         {
             if (ModelState.IsValid)
             {
-                db.CV.Add(cV);
+                db.BackEndSkills.Add(backEndSkills);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Freelancer_ID = new SelectList(db.Freelancer, "Freelancer_ID", "Freelancer_ID", cV.Freelancer_ID);
-            return View(cV);
+            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
+            return View(backEndSkills);
         }
 
-        // GET: CVs/Edit/5
+        // GET: BackEndSkills/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CV cV = db.CV.Find(id);
-            if (cV == null)
+            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
+            if (backEndSkills == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Freelancer_ID = new SelectList(db.Freelancer, "Freelancer_ID", "Freelancer_ID", cV.Freelancer_ID);
-            return View(cV);
+            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
+            return View(backEndSkills);
         }
 
-        // POST: CVs/Edit/5
+        // POST: BackEndSkills/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CV_ID,Freelancer_ID,DriversLicense,Nationality,CityOfBirth,Profile,CoreAbilities,MediaLinks")] CV cV)
+        public ActionResult Edit([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cV).State = EntityState.Modified;
+                db.Entry(backEndSkills).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Freelancer_ID = new SelectList(db.Freelancer, "Freelancer_ID", "Freelancer_ID", cV.Freelancer_ID);
-            return View(cV);
+            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
+            return View(backEndSkills);
         }
 
-        // GET: CVs/Delete/5
+        // GET: BackEndSkills/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CV cV = db.CV.Find(id);
-            if (cV == null)
+            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
+            if (backEndSkills == null)
             {
                 return HttpNotFound();
             }
-            return View(cV);
+            return View(backEndSkills);
         }
 
-        // POST: CVs/Delete/5
+        // POST: BackEndSkills/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CV cV = db.CV.Find(id);
-            db.CV.Remove(cV);
+            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
+            db.BackEndSkills.Remove(backEndSkills);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -127,17 +127,6 @@ namespace WebApplication1.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-        public ActionResult Search(string searchString)
-        {
-            var CV = from c in db.CV
-                         select c;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                CV = CV.Where(s => s.CoreAbilities.Contains(searchString));
-            }
-            return View(CV);
         }
     }
 }

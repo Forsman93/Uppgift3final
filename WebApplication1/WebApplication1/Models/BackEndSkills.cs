@@ -11,7 +11,8 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Data.Entity;
+
     public partial class BackEndSkills
     {
         public int BackEnd_ID { get; set; }
@@ -21,5 +22,10 @@ namespace WebApplication1.Models
         public Nullable<double> Java { get; set; }
     
         public virtual Knowledge Knowledge { get; set; }
+
+        public class BackEndSkillsDBcontext : DbContext
+        {
+            public DbSet<BackEndSkills> BackEndSkillss { get; set; }
+        }
     }
 }

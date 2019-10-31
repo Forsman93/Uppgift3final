@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.BackEndSkills
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BackEndSkills</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.C_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Java)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Java)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Knowledge.Knowledge_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Knowledge.Knowledge_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BackEnd_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
