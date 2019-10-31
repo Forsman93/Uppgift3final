@@ -1,0 +1,74 @@
+﻿@model WebApplication1.Models.Languages
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Språk</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Swedish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Swedish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.German)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.German)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spanish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spanish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Tillbaka till utbildningar", "Index", "EmploymentHistories")    |
+    @Html.ActionLink("Ändra", "Edit", new { id = Model.Languages_ID }) |
+    @Html.ActionLink("Nästa sidan, kompetens", "/Details/2", "Knowledges")
+</p>
+
+<div class="dropdown">
+    <button class="dropbtn">Dina Sidor</button>
+    <div class="dropdown-content">
+        <a href="/Profile/Index">Din Hemsida</a>
+        <a href="/ProfileCV/Details/1">Din Profile</a>
+        <a href="/CVBody/Details/2">Generall Information om Dig</a>
+        <a href="/Educations">Utbildningar</a>
+        <a href="/EmploymentHistories">Career</a>
+        <a href="/Languages/Details/1">Språk</a>
+        <a href="/Knowledges/Details/2">Kompetens</a>
+        <a href="/FrontEndSkills/Edit/2">Front End</a>
+        <a href="/BackEndSkills/Edit/2">Back End</a>
+    </div>
+</div>

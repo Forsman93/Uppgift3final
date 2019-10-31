@@ -1,24 +1,24 @@
-﻿@model IEnumerable<WebApplication1.Models.Education>
+﻿@model IEnumerable<WebApplication1.Models.EmploymentHistory>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Dina Utbildningar</h2>
+<h2>Career</h2>
 
 <p>
-    @Html.ActionLink("Lägg till utbildning", "Create")
+    @Html.ActionLink("Lägg till", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SchoolName)
+            @Html.DisplayNameFor(model => model.PlaceOfWork)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Subject)
+            @Html.DisplayNameFor(model => model.Role)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Degree)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StartDate)
@@ -32,23 +32,23 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SchoolName)
+            @Html.DisplayFor(modelItem => item.PlaceOfWork)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Subject)
+            @Html.DisplayFor(modelItem => item.Role)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Degree)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StartDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EndDate)
-        </td>        
+        </td>
         <td>
-            @Html.ActionLink("Ändra", "Edit", new { id = item.Education_ID }) |
-            @Html.ActionLink("Ta Bort", "Delete", new { id = item.Education_ID }) 
+            @Html.ActionLink("Ändra", "Edit", new { id=item.EmploymentHistory_ID }) |
+            @Html.ActionLink("Ta Bort", "Delete", new { id=item.EmploymentHistory_ID })
         </td>
     </tr>
 }
@@ -56,8 +56,8 @@
 </table>
 
 <p>
-    @Html.ActionLink("Tillbaka till Generall Information om Dig", " / Details/2", "CVBody") |
-    @Html.ActionLink("Career", "Index", "EmploymentHistories")
+    @Html.ActionLink("Tillbaka Utbildningar", "Index", "Educations") |
+    @Html.ActionLink("Nästa sidan, språk", "/Details/1",  "Languages")
 </p>
 
 <div class="dropdown">

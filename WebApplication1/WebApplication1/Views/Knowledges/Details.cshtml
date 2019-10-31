@@ -1,0 +1,54 @@
+﻿@model WebApplication1.Models.Knowledge
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Kompetens, vad har du för kompetens? Klicka på en knapp att komma till en sida att lägga till relevanta kompetens</h2>
+
+<div>
+    <h4>Knowledge</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FrontEnd)
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Lägg till Frontend kunskaper", "/Edit/2", "FrontEndSkills")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BackEnd)
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Lägg till Backend kunskaper", "/Edit/2", "BackEndSkills")
+        </dd>
+
+
+
+    </dl>
+    <br />
+    <br />
+
+</div>
+<p>
+    <br />   
+    @Html.ActionLink("Tillbaka till språk", "/Details/1", "Languages")
+</p>
+
+<div class="dropdown">
+    <button class="dropbtn">Dina Sidor</button>
+    <div class="dropdown-content">
+        <a href="/Profile/Index">Din Hemsida</a>
+        <a href="/ProfileCV/Details/1">Din Profile</a>
+        <a href="/CVBody/Details/2">Generall Information om Dig</a>
+        <a href="/Educations">Utbildningar</a>
+        <a href="/EmploymentHistories">Career</a>
+        <a href="/Languages/Details/1">Språk</a>
+        <a href="/Knowledges/Details/2">Kompetens</a>
+        <a href="/FrontEndSkills/Edit/2">Front End</a>
+        <a href="/BackEndSkills/Edit/2">Back End</a>
+    </div>
+</div>

@@ -10,112 +10,112 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class BackEndSkillsController : Controller
+    public class KnowledgesController : Controller
     {
         private DataBankEntities db = new DataBankEntities();
 
-        // GET: BackEndSkills
+        // GET: Knowledges
         public ActionResult Index()
         {
-            var backEndSkills = db.BackEndSkills.Include(b => b.Knowledge);
-            return View(backEndSkills.ToList());
+            var knowledge = db.Knowledge.Include(k => k.CV);
+            return View(knowledge.ToList());
         }
 
-        // GET: BackEndSkills/Details/5
+        // GET: Knowledges/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            Knowledge knowledge = db.Knowledge.Find(id);
+            if (knowledge == null)
             {
                 return HttpNotFound();
             }
-            return View(backEndSkills);
+            return View(knowledge);
         }
 
-        // GET: BackEndSkills/Create
+        // GET: Knowledges/Create
         public ActionResult Create()
         {
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID");
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense");
             return View();
         }
 
-        // POST: BackEndSkills/Create
+        // POST: Knowledges/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
+        public ActionResult Create([Bind(Include = "Knowledge_ID,CV_ID,FrontEnd,BackEnd")] Knowledge knowledge)
         {
             if (ModelState.IsValid)
             {
-                db.BackEndSkills.Add(backEndSkills);
+                db.Knowledge.Add(knowledge);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense", knowledge.CV_ID);
+            return View(knowledge);
         }
 
-        // GET: BackEndSkills/Edit/5
+        // GET: Knowledges/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            Knowledge knowledge = db.Knowledge.Find(id);
+            if (knowledge == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense", knowledge.CV_ID);
+            return View(knowledge);
         }
 
-        // POST: BackEndSkills/Edit/5
+        // POST: Knowledges/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
+        public ActionResult Edit([Bind(Include = "Knowledge_ID,CV_ID,FrontEnd,BackEnd")] Knowledge knowledge)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(backEndSkills).State = EntityState.Modified;
+                db.Entry(knowledge).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("/Details/2", "Knowledges");
+                return RedirectToAction("Index");
             }
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense", knowledge.CV_ID);
+            return View(knowledge);
         }
 
-        // GET: BackEndSkills/Delete/5
+        // GET: Knowledges/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            Knowledge knowledge = db.Knowledge.Find(id);
+            if (knowledge == null)
             {
                 return HttpNotFound();
             }
-            return View(backEndSkills);
+            return View(knowledge);
         }
 
-        // POST: BackEndSkills/Delete/5
+        // POST: Knowledges/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            db.BackEndSkills.Remove(backEndSkills);
+            Knowledge knowledge = db.Knowledge.Find(id);
+            db.Knowledge.Remove(knowledge);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

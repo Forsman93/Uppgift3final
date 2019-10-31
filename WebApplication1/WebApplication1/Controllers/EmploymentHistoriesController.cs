@@ -10,112 +10,112 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class BackEndSkillsController : Controller
+    public class EmploymentHistoriesController : Controller
     {
         private DataBankEntities db = new DataBankEntities();
 
-        // GET: BackEndSkills
+        // GET: EmploymentHistories
         public ActionResult Index()
         {
-            var backEndSkills = db.BackEndSkills.Include(b => b.Knowledge);
-            return View(backEndSkills.ToList());
+            var employmentHistory = db.EmploymentHistory.Include(e => e.CV);
+            return View(employmentHistory.ToList());
         }
 
-        // GET: BackEndSkills/Details/5
+        // GET: EmploymentHistories/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            EmploymentHistory employmentHistory = db.EmploymentHistory.Find(id);
+            if (employmentHistory == null)
             {
                 return HttpNotFound();
             }
-            return View(backEndSkills);
+            return View(employmentHistory);
         }
 
-        // GET: BackEndSkills/Create
+        // GET: EmploymentHistories/Create
         public ActionResult Create()
         {
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID");
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense");
             return View();
         }
 
-        // POST: BackEndSkills/Create
+        // POST: EmploymentHistories/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
+        public ActionResult Create([Bind(Include = "EmploymentHistory_ID,CV_ID,PlaceOfWork,Role,Description,StartDate,EndDate")] EmploymentHistory employmentHistory)
         {
             if (ModelState.IsValid)
             {
-                db.BackEndSkills.Add(backEndSkills);
+                db.EmploymentHistory.Add(employmentHistory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense", employmentHistory.CV_ID);
+            return View(employmentHistory);
         }
 
-        // GET: BackEndSkills/Edit/5
+        // GET: EmploymentHistories/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            EmploymentHistory employmentHistory = db.EmploymentHistory.Find(id);
+            if (employmentHistory == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense", employmentHistory.CV_ID);
+            return View(employmentHistory);
         }
 
-        // POST: BackEndSkills/Edit/5
+        // POST: EmploymentHistories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
+        public ActionResult Edit([Bind(Include = "EmploymentHistory_ID,CV_ID,PlaceOfWork,Role,Description,StartDate,EndDate")] EmploymentHistory employmentHistory)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(backEndSkills).State = EntityState.Modified;
+                db.Entry(employmentHistory).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("/Details/2", "Knowledges");
+                return RedirectToAction("Index");
             }
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.CV_ID = new SelectList(db.CV, "CV_ID", "DriversLicense", employmentHistory.CV_ID);
+            return View(employmentHistory);
         }
 
-        // GET: BackEndSkills/Delete/5
+        // GET: EmploymentHistories/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            EmploymentHistory employmentHistory = db.EmploymentHistory.Find(id);
+            if (employmentHistory == null)
             {
                 return HttpNotFound();
             }
-            return View(backEndSkills);
+            return View(employmentHistory);
         }
 
-        // POST: BackEndSkills/Delete/5
+        // POST: EmploymentHistories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            db.BackEndSkills.Remove(backEndSkills);
+            EmploymentHistory employmentHistory = db.EmploymentHistory.Find(id);
+            db.EmploymentHistory.Remove(employmentHistory);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

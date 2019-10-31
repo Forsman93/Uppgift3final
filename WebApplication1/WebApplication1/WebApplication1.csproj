@@ -128,12 +128,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BackEndSkillsController.cs" />
+    <Compile Include="Controllers\BrowseController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\CVBodyController.cs" />
     <Compile Include="Controllers\CVsController.cs" />
     <Compile Include="Controllers\EducationsController.cs" />
+    <Compile Include="Controllers\EmploymentHistoriesController.cs" />
     <Compile Include="Controllers\FreelancersController.cs" />
+    <Compile Include="Controllers\FrontEndSkillsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KnowledgesController.cs" />
+    <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProfileCVController.cs" />
@@ -143,6 +148,7 @@
     <Compile Include="Models\BackEndSkills.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Browse.cs" />
     <Compile Include="Models\Customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -265,15 +271,19 @@
     <Content Include="Views\ProfileCV\Edit.cshtml" />
     <Content Include="Views\CVBody\Details.cshtml" />
     <Content Include="Views\CVBody\Edit.cshtml" />
+    <Content Include="Views\EmploymentHistories\Create.cshtml" />
+    <Content Include="Views\EmploymentHistories\Delete.cshtml" />
+    <Content Include="Views\EmploymentHistories\Edit.cshtml" />
+    <Content Include="Views\EmploymentHistories\Index.cshtml" />
     <Content Include="Views\Educations\Create.cshtml" />
-    <Content Include="Views\Educations\Details.cshtml" />
+    <Content Include="Views\Educations\Delete.cshtml" />
     <Content Include="Views\Educations\Edit.cshtml" />
     <Content Include="Views\Educations\Index.cshtml" />
-    <Content Include="Views\BackEndSkills\Create.cshtml" />
-    <Content Include="Views\BackEndSkills\Delete.cshtml" />
-    <Content Include="Views\BackEndSkills\Details.cshtml" />
+    <Content Include="Views\Languages\Details.cshtml" />
+    <Content Include="Views\Languages\Edit.cshtml" />
+    <Content Include="Views\Knowledges\Details.cshtml" />
+    <Content Include="Views\FrontEndSkills\Edit.cshtml" />
     <Content Include="Views\BackEndSkills\Edit.cshtml" />
-    <Content Include="Views\BackEndSkills\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,112 +10,112 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class BackEndSkillsController : Controller
+    public class LanguagesController : Controller
     {
         private DataBankEntities db = new DataBankEntities();
 
-        // GET: BackEndSkills
+        // GET: Languages
         public ActionResult Index()
         {
-            var backEndSkills = db.BackEndSkills.Include(b => b.Knowledge);
-            return View(backEndSkills.ToList());
+            var languages = db.Languages.Include(l => l.Knowledge);
+            return View(languages.ToList());
         }
 
-        // GET: BackEndSkills/Details/5
+        // GET: Languages/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            Languages languages = db.Languages.Find(id);
+            if (languages == null)
             {
                 return HttpNotFound();
             }
-            return View(backEndSkills);
+            return View(languages);
         }
 
-        // GET: BackEndSkills/Create
+        // GET: Languages/Create
         public ActionResult Create()
         {
             ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID");
             return View();
         }
 
-        // POST: BackEndSkills/Create
+        // POST: Languages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
+        public ActionResult Create([Bind(Include = "Languages_ID,Knowledge_ID,Swedish,English,German,Spanish,Other")] Languages languages)
         {
             if (ModelState.IsValid)
             {
-                db.BackEndSkills.Add(backEndSkills);
+                db.Languages.Add(languages);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", languages.Knowledge_ID);
+            return View(languages);
         }
 
-        // GET: BackEndSkills/Edit/5
+        // GET: Languages/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            Languages languages = db.Languages.Find(id);
+            if (languages == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", languages.Knowledge_ID);
+            return View(languages);
         }
 
-        // POST: BackEndSkills/Edit/5
+        // POST: Languages/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BackEnd_ID,Knowledge_ID,C_,C,Java")] BackEndSkills backEndSkills)
+        public ActionResult Edit([Bind(Include = "Languages_ID,Knowledge_ID,Swedish,English,German,Spanish,Other")] Languages languages)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(backEndSkills).State = EntityState.Modified;
+                db.Entry(languages).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("/Details/2", "Knowledges");
+                return RedirectToAction("/Details/1", "Languages");
             }
-            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", backEndSkills.Knowledge_ID);
-            return View(backEndSkills);
+            ViewBag.Knowledge_ID = new SelectList(db.Knowledge, "Knowledge_ID", "Knowledge_ID", languages.Knowledge_ID);
+            return View(languages);
         }
 
-        // GET: BackEndSkills/Delete/5
+        // GET: Languages/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            if (backEndSkills == null)
+            Languages languages = db.Languages.Find(id);
+            if (languages == null)
             {
                 return HttpNotFound();
             }
-            return View(backEndSkills);
+            return View(languages);
         }
 
-        // POST: BackEndSkills/Delete/5
+        // POST: Languages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BackEndSkills backEndSkills = db.BackEndSkills.Find(id);
-            db.BackEndSkills.Remove(backEndSkills);
+            Languages languages = db.Languages.Find(id);
+            db.Languages.Remove(languages);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
