@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Jobb</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Lägg till", "Create")
 </p>
 <table class="table">
     <tr>
@@ -25,10 +25,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EndDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CV.DriversLicense)
-        </th>
+        </th>        
         <th></th>
     </tr>
 
@@ -50,14 +47,15 @@
             @Html.DisplayFor(modelItem => item.EndDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CV.DriversLicense)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EmploymentHistory_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EmploymentHistory_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EmploymentHistory_ID })
+            @Html.ActionLink("Ändra", "Edit", new { id=item.EmploymentHistory_ID }) |
+            @Html.ActionLink("Ta Bort", "Delete", new { id=item.EmploymentHistory_ID })
         </td>
     </tr>
 }
 
 </table>
+
+<p>
+    @Html.ActionLink("Tillbaka till förra sidan", "Index", "Educations") |
+    @Html.ActionLink("Nästa sidan", "")
+</p>

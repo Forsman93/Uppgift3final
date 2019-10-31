@@ -269,12 +269,10 @@
     <Content Include="Views\CVBody\Edit.cshtml" />
     <Content Include="Views\EmploymentHistories\Create.cshtml" />
     <Content Include="Views\EmploymentHistories\Delete.cshtml" />
-    <Content Include="Views\EmploymentHistories\Details.cshtml" />
     <Content Include="Views\EmploymentHistories\Edit.cshtml" />
     <Content Include="Views\EmploymentHistories\Index.cshtml" />
     <Content Include="Views\Educations\Create.cshtml" />
     <Content Include="Views\Educations\Delete.cshtml" />
-    <Content Include="Views\Educations\Details.cshtml" />
     <Content Include="Views\Educations\Edit.cshtml" />
     <Content Include="Views\Educations\Index.cshtml" />
   </ItemGroup>
