@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Ändra</h2>
+<h2>Ändra Back End Skills</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>BackEndSkills</h4>
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.BackEnd_ID)
@@ -51,7 +51,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Spara" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -59,6 +59,21 @@
 
 <div>
     @Html.ActionLink("Tillbaka", "/Details/2", "Knowledges")
+</div>
+
+<div class="dropdown">
+    <button class="dropbtn">Dina Sidor</button>
+    <div class="dropdown-content">
+        <a href="/Profile/Index">Din Hemsida</a>
+        <a href="/ProfileCV/Details/1">Din Profile</a>
+        <a href="/CVBody/Details/2">Generall Information om Dig</a>
+        <a href="/Educations">Utbildningar</a>
+        <a href="/EmploymentHistories">Career</a>
+        <a href="/Languages/Details/1">Språk</a>
+        <a href="/Knowledges/Details/2">Kompetens</a>
+        <a href="/FrontEndSkills/Edit/2">Front End</a>
+        <a href="/BackEndSkills/Edit/2">Back End</a>
+    </div>
 </div>
 
 @section Scripts {

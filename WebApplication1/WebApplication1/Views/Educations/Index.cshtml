@@ -48,7 +48,7 @@
         </td>        
         <td>
             @Html.ActionLink("Ändra", "Edit", new { id = item.Education_ID }) |
-            @Html.ActionLink("Ta Bort", "Delete", new { id = item.Education_ID }) |
+            @Html.ActionLink("Ta Bort", "Delete", new { id = item.Education_ID }) 
         </td>
     </tr>
 }
@@ -56,6 +56,21 @@
 </table>
 
 <p>
-    @Html.ActionLink("Tillbaka till förra sidan", "/Details/2", "CVBody") |
-    @Html.ActionLink("Nästa sidan, jobb som du har haft", "Index", "EmploymentHistories")
+    @Html.ActionLink("Tillbaka till Generall Information om Dig", " / Details/2", "CVBody") |
+    @Html.ActionLink("Career", "Index", "EmploymentHistories")
 </p>
+
+<div class="dropdown">
+    <button class="dropbtn">Dina Sidor</button>
+    <div class="dropdown-content">
+        <a href="/Profile/Index">Din Hemsida</a>
+        <a href="/ProfileCV/Details/1">Din Profile</a>
+        <a href="/CVBody/Details/2">Generall Information om Dig</a>
+        <a href="/Educations">Utbildningar</a>
+        <a href="/EmploymentHistories">Career</a>
+        <a href="/Languages/Details/1">Språk</a>
+        <a href="/Knowledges/Details/2">Kompetens</a>
+        <a href="/FrontEndSkills/Edit/2">Front End</a>
+        <a href="/BackEndSkills/Edit/2">Back End</a>
+    </div>
+</div>

@@ -4,11 +4,14 @@
     ViewBag.Title = "Kontaktinformation";
 }
 
-<h2>Min Kontaktinformation</h2>
+
+<h2>Kontaktinformation</h2>
 
 <div>
-    <h4>Första delen av ditt CV, spännande va? Om du vill ändra nånting, kan du klicka på ändra. Annars klicka 
-    på nästa, och då kommer du fram till nästa delen av ditt cv!</h4>
+    <h4>
+        Första delen av ditt CV, spännande va? Om du vill ändra nånting, kan du klicka på ändra. Annars klicka
+        på nästa, och då kommer du fram till nästa delen av ditt cv!
+    </h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -66,3 +69,20 @@
     @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID }) |
     @Html.ActionLink("Nästa sida av ditt CV!", "/Details/2", "CVBody")
 </p>
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Dina Sidor</button>
+        <div class="dropdown-content">
+            <a href="/Profile/Index">Din Hemsida</a>
+            <a href="/ProfileCV/Details/1">Din Profile</a>
+            <a href="/CVBody/Details/2">Generall Information om Dig</a>
+            <a href="/Educations">Utbildningar</a>
+            <a href="/EmploymentHistories">Career</a>
+            <a href="/Languages/Details/1">Språk</a>
+            <a href="/Knowledges/Details/2">Kompetens</a>
+            <a href="/FrontEndSkills/Edit/2">Front End</a>
+            <a href="/BackEndSkills/Edit/2">Back End</a>
+        </div>
+    </div>
+
