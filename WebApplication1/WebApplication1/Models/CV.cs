@@ -36,10 +36,10 @@ namespace WebApplication1.Models
         [Display(Name = "Födelseort")]
         public string CityOfBirth { get; set; }
         [StringLength(500)]
-        [Display(Name = "Profil – en kort beskrivning av sig själv")]
+        [Display(Name = "Profil")]
         public string Profile { get; set; }
         [StringLength(500)]
-        [Display(Name = "Kärnförmågor - de viktigaste förmågorna som duvill lyfta fram hos dig själv")]
+        [Display(Name = "Kärnförmågor")]
         public string CoreAbilities { get; set; }
         [StringLength(500)]
         [Display(Name = "Här kan du lämna länker till Linkdin, Github m.m")]

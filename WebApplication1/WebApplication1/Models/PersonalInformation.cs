@@ -33,7 +33,7 @@ namespace WebApplication1.Models
         [Display(Name = "Adress")]
         public string Adress { get; set; }
         [StringLength(55)]
-        [Display(Name = "Telefone Nummer")]
+        [Display(Name = "Telefonnummer")]
         public string Telephone { get; set; }
         [StringLength(55)]
         [Display(Name = "Epostadress")]
