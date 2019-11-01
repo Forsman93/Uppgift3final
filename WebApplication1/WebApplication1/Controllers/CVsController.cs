@@ -15,10 +15,16 @@ namespace WebApplication1.Controllers
         private DataBankEntities db = new DataBankEntities();
 
         // GET: CVs
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var cV = db.CV.Include(c => c.Freelancer);
-            return View(cV.ToList());
+            var CV = from c in db.CV
+                     select c;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                CV = CV.Where(s => s.CoreAbilities.Contains(searchString));
+            }
+            return View(db.CV.Where(x => x.CoreAbilities.Contains(searchString) || searchString == null).ToList());
         }
 
         // GET: CVs/Details/5
@@ -128,16 +134,6 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Search(string searchString)
-        {
-            var CV = from c in db.CV
-                         select c;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                CV = CV.Where(s => s.CoreAbilities.Contains(searchString));
-            }
-            return View(CV);
-        }
     }
 }

@@ -11,16 +11,17 @@
     @using (Html.BeginForm("Index", "CVs", FormMethod.Get))
     {
     <p>
-        Title: @Html.TextBox("SearchString") <br />
-        <input type="submit" value="Filter" />
+        Search: @Html.TextBox("Searchstring") <br />
+        <input type="submit" value="Search" />
     </p>
-    }
+}
 
 
 
     </p>
     <table class="table">
         <tr>
+
             <th>
                 @Html.DisplayNameFor(model => model.DriversLicense)
             </th>
