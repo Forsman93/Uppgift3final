@@ -11,7 +11,8 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PersonalInformation
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +23,20 @@ namespace WebApplication1.Models
         }
     
         public int PersonalInformation_ID { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Förnamn")]
         public string FirstName { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Efternamn")]
         public string LastName { get; set; }
+        [StringLength(255)]
+        [Display(Name = "Adress")]
         public string Adress { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Telefone Nummer")]
         public string Telephone { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Epostadress")]
         public string Email { get; set; }
         public string UserGroup { get; set; }
     

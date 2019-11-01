@@ -11,15 +11,26 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class EmploymentHistory
     {
         public int EmploymentHistory_ID { get; set; }
         public int CV_ID { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Arbetsplats")]
         public string PlaceOfWork { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Roll")]
         public string Role { get; set; }
+        [StringLength(500)]
+        [Display(Name = "Beskrivning av dina uppgifter")]
         public string Description { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Start Datum")]
         public string StartDate { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Slut Datum")]
         public string EndDate { get; set; }
     
         public virtual CV CV { get; set; }

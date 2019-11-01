@@ -11,7 +11,8 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Knowledge
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +20,7 @@ namespace WebApplication1.Models
         {
             this.BackEndSkills = new HashSet<BackEndSkills>();
             this.FrontEndSkills = new HashSet<FrontEndSkills>();
-            this.Languages = new HashSet<Languages>();
+            this.Languages = new HashSet<Languages>();            
         }
     
         public int Knowledge_ID { get; set; }
