@@ -139,6 +139,7 @@
     <Compile Include="Controllers\KnowledgesController.cs" />
     <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogInFrilanserController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProfileCVController.cs" />
     <Compile Include="Global.asax.cs">
@@ -282,6 +283,7 @@
     <Content Include="Views\Knowledges\Details.cshtml" />
     <Content Include="Views\FrontEndSkills\Edit.cshtml" />
     <Content Include="Views\BackEndSkills\Edit.cshtml" />
+    <Content Include="Views\LogInFrilanser\LogInFrilanser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

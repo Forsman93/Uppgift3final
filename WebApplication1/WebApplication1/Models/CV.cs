@@ -12,6 +12,7 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class CV
     {
@@ -25,11 +26,23 @@ namespace WebApplication1.Models
     
         public int CV_ID { get; set; }
         public int Freelancer_ID { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Körkort? Om ja, vilken typ?")]
         public string DriversLicense { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Nationalitet")]
         public string Nationality { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Födelseort")]
         public string CityOfBirth { get; set; }
+        [StringLength(500)]
+        [Display(Name = "Profil")]
         public string Profile { get; set; }
+        [StringLength(500)]
+        [Display(Name = "Kärnförmågor")]
         public string CoreAbilities { get; set; }
+        [StringLength(500)]
+        [Display(Name = "Här kan du lämna länker till Linkdin, Github m.m")]
         public string MediaLinks { get; set; }
     
         public virtual Freelancer Freelancer { get; set; }

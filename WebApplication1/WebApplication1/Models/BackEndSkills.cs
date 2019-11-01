@@ -12,15 +12,23 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class BackEndSkills
     {
         public int BackEnd_ID { get; set; }
         public int Knowledge_ID { get; set; }
+        [Range(0, 100)]
+        [Display(Name = "C#")]
         public Nullable<double> C_ { get; set; }
+        [Range(0, 100)]
+        [Display(Name = "C")]
         public Nullable<double> C { get; set; }
+        [Range(0, 100)]
+        [Display(Name = "Java")]
         public Nullable<double> Java { get; set; }
-    
+        
+
         public virtual Knowledge Knowledge { get; set; }
 
         public class BackEndSkillsDBcontext : DbContext

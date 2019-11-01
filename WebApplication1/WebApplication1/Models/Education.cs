@@ -11,15 +11,26 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Education
     {
         public int Education_ID { get; set; }
         public int CV_ID { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Namn på Skolan")]
         public string SchoolName { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Ämne")]
         public string Subject { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Examen")]
         public string Degree { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Start Datum")]
         public string StartDate { get; set; }
+        [StringLength(55)]
+        [Display(Name = "Slut Datum")]
         public string EndDate { get; set; }
     
         public virtual CV CV { get; set; }
