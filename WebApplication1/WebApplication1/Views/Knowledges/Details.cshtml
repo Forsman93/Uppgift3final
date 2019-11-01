@@ -1,7 +1,7 @@
 ﻿@model WebApplication1.Models.Knowledge
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Kunskap";
 }
 
 <h2>Kompetens, vad har du för kompetens? Klicka på en knapp att komma till en sida att lägga till relevanta kompetens</h2>
@@ -15,7 +15,8 @@
         </dt>
 
         <dd>
-            @Html.ActionLink("Lägg till Frontend kunskaper", "/Edit/2", "FrontEndSkills")
+            <p><a class="btn btn-default" @Html.ActionLink("Lägg till Frontend kunskaper", "/Edit/2", "FrontEndSkills")</a></p>
+            
         </dd>
 
         <dt>
@@ -23,7 +24,8 @@
         </dt>
 
         <dd>
-            @Html.ActionLink("Lägg till Backend kunskaper", "/Edit/2", "BackEndSkills")
+            <p><a class="btn btn-default" @Html.ActionLink("Lägg till Backend kunskaper", "/Edit/2", "BackEndSkills")</a></p>
+         
         </dd>
 
 
@@ -34,21 +36,21 @@
 
 </div>
 <p>
-    <br />   
-    @Html.ActionLink("Tillbaka till språk", "/Details/1", "Languages")
+    <br />
+    <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till språk", "/Details/1", "Languages")</a></p>
 </p>
 
-<div class="dropdown">
-    <button class="dropbtn">Dina Sidor</button>
-    <div class="dropdown-content">
-        <a href="/Profile/Index">Din Hemsida</a>
-        <a href="/ProfileCV/Details/1">Din Profil</a>
-        <a href="/CVBody/Details/2">Mer Information om Dig</a>
-        <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
-        <a href="/Languages/Details/1">Språk</a>
-        <a href="/Knowledges/Details/2">Kompetens</a>
-        <a href="/FrontEndSkills/Edit/2">Front End</a>
-        <a href="/BackEndSkills/Edit/2">Back End</a>
+    <div class="dropdown">
+        <button class="dropbtn">Dina Sidor</button>
+        <div class="dropdown-content">
+            <a href="/Profile/Index">Din Hemsida</a>
+            <a href="/ProfileCV/Details/1">Din Profil</a>
+            <a href="/CVBody/Details/2">Mer Information om Dig</a>
+            <a href="/Educations">Utbildningar</a>
+            <a href="/EmploymentHistories">Karriär</a>
+            <a href="/Languages/Details/1">Språk</a>
+            <a href="/Knowledges/Details/2">Kompetens</a>
+            <a href="/FrontEndSkills/Edit/2">Front End</a>
+            <a href="/BackEndSkills/Edit/2">Back End</a>
+        </div>
     </div>
-</div>

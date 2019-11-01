@@ -1,7 +1,7 @@
 ﻿@model WebApplication1.Models.PersonalInformation
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Profil";
 }
 
 <h2>Mitt Konto</h2>
@@ -61,6 +61,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID }) |
-    @Html.ActionLink("Tillbaka till din hemsida!", "Index")
+    <p><a class="btn btn-default" @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID })</a></p>
+    <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till din hemsida!", "Index")</a></p>   
 </p>

@@ -5,6 +5,7 @@
 }
 
 <h2>Ändra Back End Skills</h2>
+<h4>Betyg sätt din nivå, tänk %, 0 är noll kunskap i området och 100 betyder att man bemästra området.</h4>
 
 
 @using (Html.BeginForm())
@@ -26,8 +27,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.C_, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.C_, htmlAttributes: new { @class = "control-label col-md-2" })            
+            <div class="col-md-10">                
                 @Html.EditorFor(model => model.C_, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.C_, "", new { @class = "text-danger" })
             </div>
@@ -57,24 +58,26 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Tillbaka", "/Details/2", "Knowledges")
-</div>
+    
 
-<div class="dropdown">
-    <button class="dropbtn">Dina Sidor</button>
-    <div class="dropdown-content">
-        <a href="/Profile/Index">Din Hemsida</a>
-        <a href="/ProfileCV/Details/1">Din Profil</a>
-        <a href="/CVBody/Details/2">Mer Information om Dig</a>
-        <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
-        <a href="/Languages/Details/1">Språk</a>
-        <a href="/Knowledges/Details/2">Kompetens</a>
-        <a href="/FrontEndSkills/Edit/2">Front End</a>
-        <a href="/BackEndSkills/Edit/2">Back End</a>
+    <div>
+        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka", "/Details/2", "Knowledges")</a></p>        
     </div>
-</div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Dina Sidor</button>
+        <div class="dropdown-content">
+            <a href="/Profile/Index">Din Hemsida</a>
+            <a href="/ProfileCV/Details/1">Din Profil</a>
+            <a href="/CVBody/Details/2">Mer Information om Dig</a>
+            <a href="/Educations">Utbildningar</a>
+            <a href="/EmploymentHistories">Karriär</a>
+            <a href="/Languages/Details/1">Språk</a>
+            <a href="/Knowledges/Details/2">Kompetens</a>
+            <a href="/FrontEndSkills/Edit/2">Front End</a>
+            <a href="/BackEndSkills/Edit/2">Back End</a>
+        </div>
+    </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

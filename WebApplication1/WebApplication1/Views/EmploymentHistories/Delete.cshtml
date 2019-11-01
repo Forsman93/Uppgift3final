@@ -1,13 +1,13 @@
 ﻿@model WebApplication1.Models.EmploymentHistory
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Karriär";
 }
 
 <h2>Ta bort</h2>
 
 <h3>Vill du verkligen ta bort det här?</h3>
-<div>    
+<div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -53,12 +53,17 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Ta Bort" class="btn btn-default" /> |
-            @Html.ActionLink("Tillbaka", "Index")
+            <input type="submit" value="Ta Bort" class="btn btn-default" /> 
+            
         </div>
     }
+
+
+    <p><a class="btn btn-default" @Html.ActionLink("Tillbaka", "Index")</a></p>
+
 </div>

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebApplication1.Models.EmploymentHistory>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Karriär";
 }
 
 <h2>Career</h2>
 
 <p>
-    @Html.ActionLink("Lägg till", "Create")
+    <a class="btn btn-default" @Html.ActionLink("Lägg till", "Create")</a>
 </p>
 <table class="table">
     <tr>
@@ -25,39 +25,40 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EndDate)
-        </th>        
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceOfWork)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Role)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndDate)
-        </td>
-        <td>
-            @Html.ActionLink("Ändra", "Edit", new { id=item.EmploymentHistory_ID }) |
-            @Html.ActionLink("Ta Bort", "Delete", new { id=item.EmploymentHistory_ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.ActionLink("Ändra", "Edit", new { id = item.EmploymentHistory_ID }) |
+                @Html.ActionLink("Ta Bort", "Delete", new { id = item.EmploymentHistory_ID })
+            </td>
+        </tr>
+    }
 
 </table>
 
 <p>
-    @Html.ActionLink("Tillbaka Utbildningar", "Index", "Educations") |
-    @Html.ActionLink("Nästa sidan, språk", "/Details/1",  "Languages")
+<p><a class="btn btn-default" @Html.ActionLink("Tillbaka Utbildningar", "Index", "Educations")</a></p>
+<p><a class="btn btn-default" @Html.ActionLink("Nästa sidan, språk", "/Details/1", "Languages")</a></p>
 </p>
 
 <div class="dropdown">
@@ -67,7 +68,7 @@
         <a href="/ProfileCV/Details/1">Din Profil</a>
         <a href="/CVBody/Details/2">Mer Information om Dig</a>
         <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
+        <a href="/EmploymentHistories">Karriär</a>
         <a href="/Languages/Details/1">Språk</a>
         <a href="/Knowledges/Details/2">Kompetens</a>
         <a href="/FrontEndSkills/Edit/2">Front End</a>

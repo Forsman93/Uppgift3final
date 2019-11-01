@@ -1,11 +1,11 @@
 ﻿@model WebApplication1.Models.Languages
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Språk";
 }
 
 <h2>Ändra</h2>
-
+<h4>Betyg sätt din nivå, tänk %, 0 är noll kunskap i området och 100 betyder att man bemästra området.</h4>
 
 @using (Html.BeginForm())
 {
@@ -72,9 +72,9 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Tillbaka", "/Details/1", "Languages")
-</div>
+    <div>
+        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka", "/Details/1", "Languages")</a></p>
+    </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

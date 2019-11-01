@@ -1,7 +1,7 @@
 ﻿@model WebApplication1.Models.PersonalInformation
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Profil";
 }
 
 <h2>Här kan du ändra dina kontaktuppgifter</h2>
@@ -73,6 +73,7 @@
 }
 
     <div>
-        @Html.ActionLink("Tillbaka till dina kontaktuppgifter", "/Details/1")
-        @Html.ActionLink("Tillbaka till din hemsida", "Index")
+        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till dina kontaktuppgifter", "/Details/1")</a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till din hemsida", "Index")</a></p>
+
     </div>

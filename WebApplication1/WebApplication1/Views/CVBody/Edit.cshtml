@@ -1,7 +1,7 @@
 ﻿@model WebApplication1.Models.CV
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Ändra Information";
 }
 
 <h2>Ändra information om dig</h2>
@@ -81,5 +81,5 @@
 }
 
     <div>
-        @Html.ActionLink("Tillbaka till ditt CV!", "/Details/2", "CVBody")
+        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till ditt CV!", "/Details/2", "CVBody")</a></p>        
     </div>
