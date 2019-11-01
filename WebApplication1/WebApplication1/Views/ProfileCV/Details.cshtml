@@ -9,7 +9,7 @@
 
 <div>
     <h4>
-        Första delen av ditt CV, spännande va? Om du vill ändra nånting, kan du klicka på ändra. Annars klicka
+        Första delen av ditt CV, spännande va? Om du vill ändra nånting, kan du klicka på ändra. Annars klickar du
         på nästa, och då kommer du fram till nästa delen av ditt cv!
     </h4>
     <hr />
@@ -54,20 +54,13 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserGroup)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserGroup)
-        </dd>
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Tillbaka till din hemsida!", "Index", "Profile") |
     @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID }) |
-    @Html.ActionLink("Nästa sida av ditt CV!", "/Details/2", "CVBody")
+    @Html.ActionLink("Mer information om dig!", "/Details/2", "CVBody")
 </p>
 
 
@@ -76,7 +69,7 @@
         <div class="dropdown-content">
             <a href="/Profile/Index">Din Hemsida</a>
             <a href="/ProfileCV/Details/1">Din Profile</a>
-            <a href="/CVBody/Details/2">Generall Information om Dig</a>
+            <a href="/CVBody/Details/2">Mer information om digg</a>
             <a href="/Educations">Utbildningar</a>
             <a href="/EmploymentHistories">Career</a>
             <a href="/Languages/Details/1">Språk</a>
