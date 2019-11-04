@@ -58,12 +58,15 @@
         </dd>
     </dl>
 </div>
-<p>
-    <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till din kontaktinformation", "/Details/1", "ProfileCV")</a></p>
-    <p><a class="btn btn-default" @Html.ActionLink("Ändra", "Edit", new { id = Model.CV_ID })</a></p>
-    <p><a class="btn btn-default" @Html.ActionLink("Nästa sidan, dina utbildningar", "Index", "Educations")</a></p>
 
-</p>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+<ul class="nav-buttons">
+    <li> <a class="btn btn-default" @Html.ActionLink("Tillbaka till din kontaktinformation", "/Details/1", "ProfileCV")</a>
+    <li> <a class="btn btn-default"  @Html.ActionLink("Ändra", "Edit", new { id = Model.CV_ID })</a>
+    <li> <a class="btn btn-default" @Html.ActionLink("Nästa sidan, dina utbildningar", "Index", "Educations")</a>
+</ul>
+
 
     <div class="dropdown">
         <button class="dropbtn">Dina Sidor</button>

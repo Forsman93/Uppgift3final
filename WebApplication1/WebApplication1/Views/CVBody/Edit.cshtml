@@ -9,9 +9,9 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.CV_ID)
@@ -74,12 +74,15 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Spara" class="btn btn-default" />
+                <input type="submit" value="Spara" class="btn btn-save" />
             </div>
         </div>
     </div>
 }
 
-    <div>
-        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till ditt CV!", "/Details/2", "CVBody")</a></p>        
-    </div>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+<ul class="nav-buttons">
+    <li> <a class="btn btn-default" @Html.ActionLink("Tillbaka till ditt CV!", "/Details/2", "CVBody")</a>
+</ul>
+

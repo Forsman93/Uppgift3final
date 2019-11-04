@@ -13,11 +13,37 @@ margin: 20px 0;
 padding: 20px;
 }
 
-
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+.nav-buttons {
+    margin-top: 15px;
 }
+
+.nav-buttons > li {
+    display: inline;
+    margin-right: 30px;
+}
+
+.btn-save {
+    color: black;
+    background-color: rgba(0, 122, 0, 0.2);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #D6D9DC;
+}
+
+.btn-delete {
+    color: black;
+    background-color: rgba(122, 0, 0, 0.2);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #D6D9DC;
+}
+
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -41,7 +67,7 @@ textarea {
 
 /*Drop down button freelancer for easy access to each page*/
 
-.dropbtn {
+.dropbtn{
     background-color: #808080;
     color: white;
     padding: 16px;
@@ -100,11 +126,11 @@ textarea {
     padding: 20px;
 }
 
-form label, form input, form button, textarea {
+form label, form input, form button, textarea, {
     font-family: "Helvetica", "Arial", sans-serif;
     font-size: 14px;
     border: 0;
-    margin-bottom: 3px;   
+    margin-bottom: 3px;
     border-radius: 3px;
 }
 
@@ -133,3 +159,4 @@ form input {
 .form-row button:active {
     background-color: #407FC7;
 }
+

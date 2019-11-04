@@ -58,12 +58,17 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Ta Bort" class="btn btn-default" /> 
-            
+            <input type="submit" value="Ta Bort" class="btn btn-delete" />
+
         </div>
     }
 
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-    <p><a class="btn btn-default" @Html.ActionLink("Tillbaka", "Index")</a></p>
+    <ul class="nav-buttons">
+        <li> <a class="btn btn-default"  @Html.ActionLink("Tillbaka", "Index")</a>
+    </ul>
+
+    
 
 </div>

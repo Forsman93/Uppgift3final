@@ -68,14 +68,18 @@
         </div>
 
         <div class="form-group">
+            
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Spara" class="btn btn-default" />
+                <input type="submit" value="Spara" class="btn btn-save" />
             </div>
         </div>
     </div>
 }
 
-        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till dina kontaktuppgifter", "/Details/1")</a></p>
-        <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till din hemsida", "Index")</a></p>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-    
+    <ul class="nav-buttons">
+        <li> <a class="btn btn-default" @Html.ActionLink("Tillbaka till dina kontaktuppgifter", "/Details/1")</a>
+        <li> <a class="btn btn-default" @Html.ActionLink("Tillbaka till din hemsida", "Index")</a>
+    </ul>
+
