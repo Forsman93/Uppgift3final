@@ -1,4 +1,20 @@
-﻿body {
+﻿/* Global CSS */
+
+.body-global, .header-global {
+padding-left: 15%;
+width: 100%;
+font-family: "Helvetica", "Arial", sans-serif;
+text-align: center;
+background-color: #F6F7F8;
+border: 1px solid #D6D9DC;
+border-radius: 3px;
+width: 80%;
+margin: 20px 0;
+padding: 20px;
+}
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -66,3 +82,54 @@ textarea {
     background-color: #000000;
 }
 
+/*Log in Freelance CSS*/
+
+.login-box {
+    padding-left: 15%;
+    width: 100%;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.login-box-header, .login-input {
+    text-align: center;
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 80%;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+form label, form input, form button, textarea {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    border: 0;
+    margin-bottom: 3px;   
+    border-radius: 3px;
+}
+
+.form-row textarea {
+    min-height: 7px;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;    
+}
+
+
+form input {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    width: 100%;
+    padding: 7px;
+    font-size: 1em;
+    align-content: center;
+}
+
+.form-row button:hover {
+    background-color: #76AEED;
+}
+
+.form-row button:active {
+    background-color: #407FC7;
+}

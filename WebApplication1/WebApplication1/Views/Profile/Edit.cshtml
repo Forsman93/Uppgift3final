@@ -4,6 +4,9 @@
     ViewBag.Title = "Profil";
 }
 
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+
 <h2>Här kan du ändra dina kontaktuppgifter</h2>
 
 @using (Html.BeginForm())
@@ -72,8 +75,7 @@
     </div>
 }
 
-    <div>
         <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till dina kontaktuppgifter", "/Details/1")</a></p>
         <p><a class="btn btn-default" @Html.ActionLink("Tillbaka till din hemsida", "Index")</a></p>
 
-    </div>
+    

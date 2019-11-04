@@ -3,27 +3,37 @@
     ViewBag.Title = "Log In";
 }
 
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
 <div class="login-box">
 
     <header class='login-box-header'>
-        <h1>Frilansare? Log in!</h1>        
+        <h1>Frilansare? <br/> Log in!</h1>        
     </header>
+    
 
-    <div class="container">
+        <form name="login-frilanser">
 
-        <form action="" name="login-frilanser">
+            <div class="login-input">
+                <label for="email">Epostadress</label>
+                <br />
+                <input type="text" name="epostadress" id="emailaddress" placeholder="exampel@exampel.com" />
 
-            <label for="email">Epostadress</label>
-            <input type="text" name="epostadress" id="emailaddress" placeholder="email" />
+                <br />
+                <br />
 
-            <label for="password">Lösenord</label>
-            <input type="password" name="password" id="password" />
+                <label for="password">Lösenord</label>
+                <br />
+                <input type="password" name="password" id="password" />
 
-            <p><a class="btn btn-default" @Html.ActionLink("Login", "Index", "Profile")</a></p>
-            
+                <br />
+                <br />
+
+                <p><a class="btn btn-default" @Html.ActionLink("Login", "Index", "Profile")</a></p>
+            </div>
 
         </form>
 
 
-    </div>
+    
 </div>
