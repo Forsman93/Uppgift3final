@@ -27,7 +27,7 @@ namespace WebApplication1.Models
         public int CV_ID { get; set; }
         public int Freelancer_ID { get; set; }
         [StringLength(55)]
-        [Display(Name = "Körkort? Om ja, vilken typ?")]
+        [Display(Name = "Körkort")]
         public string DriversLicense { get; set; }
         [StringLength(55)]
         [Display(Name = "Nationalitet")]
@@ -42,7 +42,7 @@ namespace WebApplication1.Models
         [Display(Name = "Kärnförmågor")]
         public string CoreAbilities { get; set; }
         [StringLength(500)]
-        [Display(Name = "Här kan du lämna länker till Linkdin, Github m.m")]
+        [Display(Name = "Länker till Linkdin, Github m.m")]
         public string MediaLinks { get; set; }
     
         public virtual Freelancer Freelancer { get; set; }
