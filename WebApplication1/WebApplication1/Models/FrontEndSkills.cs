@@ -18,13 +18,13 @@ namespace WebApplication1.Models
         public int FrontEnd_ID { get; set; }
         public int Knowledge_ID { get; set; }
         [Range(0, 100)]
-        [Display(Name = "HTML")]
+        [Display(Name = "HTML (%)")]
         public Nullable<double> HTML { get; set; }
         [Range(0, 100)]
-        [Display(Name = "CSS")]
+        [Display(Name = "CSS (%)")]
         public Nullable<double> CSS { get; set; }
         [Range(0, 100)]
-        [Display(Name = "Jscript")]
+        [Display(Name = "Jscript (%)")]
         public Nullable<double> Jscript { get; set; }
     
         public virtual Knowledge Knowledge { get; set; }

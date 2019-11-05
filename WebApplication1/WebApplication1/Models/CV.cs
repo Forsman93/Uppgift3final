@@ -42,7 +42,7 @@ namespace WebApplication1.Models
         [Display(Name = "Kärnförmågor")]
         public string CoreAbilities { get; set; }
         [StringLength(500)]
-        [Display(Name = "Länker till Linkdin, Github m.m")]
+        [Display(Name = "Länk till din professionella profil")]
         public string MediaLinks { get; set; }
     
         public virtual Freelancer Freelancer { get; set; }
