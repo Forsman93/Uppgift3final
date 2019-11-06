@@ -19,13 +19,13 @@ namespace WebApplication1.Models
         public int BackEnd_ID { get; set; }
         public int Knowledge_ID { get; set; }
         [Range(0, 100)]
-        [Display(Name = "C#")]
+        [Display(Name = "C# (%)")]
         public Nullable<double> C_ { get; set; }
         [Range(0, 100)]
-        [Display(Name = "C")]
+        [Display(Name = "C (%)")]
         public Nullable<double> C { get; set; }
         [Range(0, 100)]
-        [Display(Name = "Java")]
+        [Display(Name = "Java (%)")]
         public Nullable<double> Java { get; set; }
         
 

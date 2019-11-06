@@ -1,17 +1,17 @@
 ﻿@model WebApplication1.Models.Languages
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Språk";
 }
 
 <h2>Ändra</h2>
-
+<h4>Betyg sätt din nivå, tänk %, 0 är noll kunskap i området och 100 betyder att man bemästra området.</h4>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">        
+
+    <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Languages_ID)
@@ -66,15 +66,18 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Spara" class="btn btn-default" />
+                <input type="submit" value="Spara" class="btn btn-save" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Tillbaka", "/Details/1", "Languages")
-</div>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+<ul class="nav-buttons">
+    <li> <a class="btn btn-default" @Html.ActionLink("Tillbaka", "/Details/1", "Languages")</a>
+</ul>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

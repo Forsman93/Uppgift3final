@@ -4,77 +4,85 @@
     ViewBag.Title = "Kontaktinformation";
 }
 
-
-<h2>Kontaktinformation</h2>
-
-<div>
-    <h4>
-        Första delen av ditt CV, spännande va? Om du vill ändra nånting, kan du klicka på ändra. Annars klickar du
-        på nästa, och då kommer du fram till nästa delen av ditt cv!
-    </h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Adress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Adress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telephone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telephone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Tillbaka till din hemsida!", "Index", "Profile") |
-    @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID }) |
-    @Html.ActionLink("Mer information om dig!", "/Details/2", "CVBody")
-</p>
 
-<div class="dropdown">
-    <button class="dropbtn">Dina Sidor</button>
-    <div class="dropdown-content">
-        <a href="/Profile/Index">Din Hemsida</a>
-        <a href="/ProfileCV/Details/1">Din Profil</a>
-        <a href="/CVBody/Details/2">Mer Information om Dig</a>
-        <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
-        <a href="/Languages/Details/1">Språk</a>
-        <a href="/Knowledges/Details/2">Kompetens</a>
-        <a href="/FrontEndSkills/Edit/2">Front End</a>
-        <a href="/BackEndSkills/Edit/2">Back End</a>
-    </div>
-</div>
+    <h2>Kontaktinformation</h2>
+
+        <div>
+            <h4>
+                Första delen av ditt CV, spännande va? Om du vill ändra nånting, kan du klicka på ändra. Annars klickar du
+                på nästa, och då kommer du fram till nästa delen av ditt cv!
+            </h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Adress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Adress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telephone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Telephone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+
+            </dl>
+        </div>
+
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+        <ul class="nav-buttons">
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Dina Sidor</button>
+                    <div class="dropdown-content">
+                        <a href="/Profile/Index">Din Hemsida</a>
+                        <a href="/ProfileCV/Details/1">Din Profil</a>
+                        <a href="/CVBody/Details/2">Mer Information om Dig</a>
+                        <a href="/Educations">Utbildningar</a>
+                        <a href="/EmploymentHistories">Karriär</a>
+                        <a href="/Languages/Details/1">Språk</a>
+                        <a href="/Knowledges/Details/2">Kompetens</a>
+                        <a href="/FrontEndSkills/Edit/2">Front End</a>
+                        <a href="/BackEndSkills/Edit/2">Back End</a>
+                    </div>
+                </div>
+            </li>
+            <li> <a class="btn btn-default" @Html.ActionLink("🢀 Tillbaka till din hemsida!", "Index", "Profile")</a>
+            <li> <a class="btn btn-default" @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID })</a>
+            <li> <a class="btn btn-default" @Html.ActionLink("Nästa sidan, Mer information om dig! 🢂", "/Details/2", "CVBody")</a>
+        </ul>
+
 

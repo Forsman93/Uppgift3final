@@ -7,7 +7,7 @@
 <h2>Dina Utbildningar</h2>
 
 <p>
-    @Html.ActionLink("Lägg till utbildning", "Create")
+    <a class="btn btn-default" @Html.ActionLink("Lägg till", "Create")</a>
 </p>
 <table class="table">
     <tr>
@@ -25,52 +25,56 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EndDate)
-        </th>        
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SchoolName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Degree)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndDate)
-        </td>        
-        <td>
-            @Html.ActionLink("Ändra", "Edit", new { id = item.Education_ID }) |
-            @Html.ActionLink("Ta Bort", "Delete", new { id = item.Education_ID }) 
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchoolName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Degree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.ActionLink("Ändra", "Edit", new { id = item.Education_ID }) |
+                @Html.ActionLink("Ta Bort", "Delete", new { id = item.Education_ID })
+            </td>
+        </tr>
+    }
 
 </table>
 
-<p>
-    @Html.ActionLink("Tillbaka till Mer Information om Dig", "/Details/2", "CVBody") |
-    @Html.ActionLink("Nästa Sidan, Career", "Index", "EmploymentHistories")
-</p>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-<div class="dropdown">
-    <button class="dropbtn">Dina Sidor</button>
-    <div class="dropdown-content">
-        <a href="/Profile/Index">Din Hemsida</a>
-        <a href="/ProfileCV/Details/1">Din Profil</a>
-        <a href="/CVBody/Details/2">Mer Information om Dig</a>
-        <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
-        <a href="/Languages/Details/1">Språk</a>
-        <a href="/Knowledges/Details/2">Kompetens</a>
-        <a href="/FrontEndSkills/Edit/2">Front End</a>
-        <a href="/BackEndSkills/Edit/2">Back End</a>
-    </div>
-</div>
+<ul class="nav-buttons">
+    <li>
+        <div class="dropdown">
+            <button class="dropbtn">Dina Sidor</button>
+            <div class="dropdown-content">
+                <a href="/Profile/Index">Din Hemsida</a>
+                <a href="/ProfileCV/Details/1">Din Profil</a>
+                <a href="/CVBody/Details/2">Mer Information om Dig</a>
+                <a href="/Educations">Utbildningar</a>
+                <a href="/EmploymentHistories">Karriär</a>
+                <a href="/Languages/Details/1">Språk</a>
+                <a href="/Knowledges/Details/2">Kompetens</a>
+                <a href="/FrontEndSkills/Edit/2">Front End</a>
+                <a href="/BackEndSkills/Edit/2">Back End</a>
+            </div>
+        </div>
+    </li>
+    <li> <a class="btn btn-default" @Html.ActionLink("🢀 Tillbaka till Mer Information om Dig", "/Details/2", "CVBody")</a>
+    <li> <a class="btn btn-default" @Html.ActionLink("Nästa Sidan, Karrier 🢂", "Index", "EmploymentHistories")</a>
+</ul>

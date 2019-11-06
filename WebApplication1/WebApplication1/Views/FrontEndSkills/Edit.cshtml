@@ -1,18 +1,19 @@
 ﻿@model WebApplication1.Models.FrontEndSkills
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Kunskap";
 }
 
 <h2>Ändra dina Front End Skills</h2>
+<h4>Betyg sätt din nivå, tänk %, 0 är noll kunskap i området och 100 betyder att man bemästra området.</h4>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.FrontEnd_ID)
@@ -51,30 +52,34 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Spara" class="btn btn-default" />
+                <input type="submit" value="Spara" class="btn btn-save" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Tillbaka", "/Details/2", "Knowledges")
-</div>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-<div class="dropdown">
-    <button class="dropbtn">Dina Sidor</button>
-    <div class="dropdown-content">
-        <a href="/Profile/Index">Din Hemsida</a>
-        <a href="/ProfileCV/Details/1">Din Profil</a>
-        <a href="/CVBody/Details/2">Mer Information om Dig</a>
-        <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
-        <a href="/Languages/Details/1">Språk</a>
-        <a href="/Knowledges/Details/2">Kompetens</a>
-        <a href="/FrontEndSkills/Edit/2">Front End</a>
-        <a href="/BackEndSkills/Edit/2">Back End</a>
-    </div>
-</div>
+<ul class="nav-buttons">
+    <li>
+        <div class="dropdown">
+            <button class="dropbtn">Dina Sidor</button>
+            <div class="dropdown-content">
+                <a href="/Profile/Index">Din Hemsida</a>
+                <a href="/ProfileCV/Details/1">Din Profil</a>
+                <a href="/CVBody/Details/2">Mer Information om Dig</a>
+                <a href="/Educations">Utbildningar</a>
+                <a href="/EmploymentHistories">Karriär</a>
+                <a href="/Languages/Details/1">Språk</a>
+                <a href="/Knowledges/Details/2">Kompetens</a>
+                <a href="/FrontEndSkills/Edit/2">Front End</a>
+                <a href="/BackEndSkills/Edit/2">Back End</a>
+            </div>
+        </div>
+    </li>
+    <li> <a class="btn btn-default" @Html.ActionLink("🢀 Tillbaka", "/Details/2", "Knowledges")</a>
+</ul>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

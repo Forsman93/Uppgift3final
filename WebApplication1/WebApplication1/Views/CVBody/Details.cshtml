@@ -1,12 +1,12 @@
 ﻿@model WebApplication1.Models.CV
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Information";
 }
 
 <h2>Mer information om dig</h2>
 
-<div>    
+<div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -56,28 +56,30 @@
         <dd>
             @Html.DisplayFor(model => model.MediaLinks)
         </dd>
-
-        
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Tillbaka till din kontaktinformation", "/Details/1", "ProfileCV") |
-    @Html.ActionLink("Ändra", "Edit", new { id = Model.CV_ID }) |
-    @Html.ActionLink("Nästa sidan, dina utbildningar", "Index", "Educations") 
-</p>
 
-<div class="dropdown">
-    <button class="dropbtn">Dina Sidor</button>
-    <div class="dropdown-content">
-        <a href="/Profile/Index">Din Hemsida</a>
-        <a href="/ProfileCV/Details/1">Din Profil</a>
-        <a href="/CVBody/Details/2">Mer Information om Dig</a>
-        <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
-        <a href="/Languages/Details/1">Språk</a>
-        <a href="/Knowledges/Details/2">Kompetens</a>
-        <a href="/FrontEndSkills/Edit/2">Front End</a>
-        <a href="/BackEndSkills/Edit/2">Back End</a>
-    </div>
-</div>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+<ul class="nav-buttons">
+    <li>
+        <div class="dropdown">
+            <button class="dropbtn">Dina Sidor</button>
+            <div class="dropdown-content">
+                <a href="/Profile/Index">Din Hemsida</a>
+                <a href="/ProfileCV/Details/1">Din Profil</a>
+                <a href="/CVBody/Details/2">Mer Information om Dig</a>
+                <a href="/Educations">Utbildningar</a>
+                <a href="/EmploymentHistories">Karriär</a>
+                <a href="/Languages/Details/1">Språk</a>
+                <a href="/Knowledges/Details/2">Kompetens</a>
+                <a href="/FrontEndSkills/Edit/2">Front End</a>
+                <a href="/BackEndSkills/Edit/2">Back End</a>
+            </div>
+        </div>
+    </li>
+    <li> <a class="btn btn-default" @Html.ActionLink("🢀 Tillbaka till din kontaktinformation", "/Details/1", "ProfileCV")</a>
+    <li> <a class="btn btn-default" @Html.ActionLink("Ändra", "Edit", new { id = Model.CV_ID })</a>
+    <li> <a class="btn btn-default" @Html.ActionLink("Nästa sidan, dina utbildningar 🢂", "Index", "Educations")</a>
+</ul>
+

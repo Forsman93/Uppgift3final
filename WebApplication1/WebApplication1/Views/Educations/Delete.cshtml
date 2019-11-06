@@ -1,14 +1,14 @@
 ﻿@model WebApplication1.Models.Education
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Utbildning";
 }
 
 <h2>Ta bort utbildningen</h2>
 
 <h3>Vill du verkligen ta bort den här utbildningen?</h3>
 <div>
-   
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -61,12 +61,21 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Ta Bort" class="btn btn-default" /> |
-            @Html.ActionLink("Tillbaka", "Index")
+            <input type="submit" value="Ta Bort" class="btn btn-delete" />
         </div>
     }
+    
 </div>
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+<ul class="nav-buttons">
+    <li> <a class="btn btn-default" @Html.ActionLink("Tillbaka", "Index")</a>
+</ul>
+
+

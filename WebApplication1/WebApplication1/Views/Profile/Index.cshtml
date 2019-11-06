@@ -1,30 +1,52 @@
-﻿              @model IEnumerable<WebApplication1.Models.PersonalInformation>
+﻿@model IEnumerable<WebApplication1.Models.PersonalInformation>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ditt Konto";
 }
 
-<h2>Välkommen till ditt Konto, Alex</h2>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-<p>
-    Sugen att uppdatera dina kontaktuppgifter?
-    @Html.ActionLink("Dina kontaktuppgifter", "/Details/1")
-    <br />
-    Eller vill du skapa eller uppdatera ditt CV? Då ska du klicka här istället
-    @Html.ActionLink("Ditt CV", "/Details/1",  "ProfileCV" )
-</p>
+<div class="header-global">
 
-<div class="dropdown">
-    <button class="dropbtn">Dina Sidor</button>
-    <div class="dropdown-content">
-        <a href="/Profile/Index">Din Hemsida</a>
-        <a href="/ProfileCV/Details/1">Din Profil</a>
-        <a href="/CVBody/Details/2">Mer Information om Dig</a>
-        <a href="/Educations">Utbildningar</a>
-        <a href="/EmploymentHistories">Career</a>
-        <a href="/Languages/Details/1">Språk</a>
-        <a href="/Knowledges/Details/2">Kompetens</a>
-        <a href="/FrontEndSkills/Edit/2">Front End</a>
-        <a href="/BackEndSkills/Edit/2">Back End</a>
-    </div>
+    <h2>Välkommen till ditt konto, Alex</h2>
+
 </div>
+
+<div class="body-global">
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Kontaktuppgifter</h2>
+            <h5>Sugen att uppdatera dina kontaktuppgifter? </h5>
+            <br/>
+            <a class="btn btn-default" @Html.ActionLink("Dina kontaktuppgifter", "/Details/1")</a>
+        </div>
+        <div class="col-md-4">
+            <h2>Ditt CV</h2>
+            <h5>Vill du skapa eller uppdatera ditt CV? Då ska du klicka här istället </h5>
+            <a class="btn btn-default" @Html.ActionLink("Ditt CV", "/Details/1", "ProfileCV")</a>
+        </div>
+        <div class="col-md-4">
+            <h2>CV Sidor</h2>
+            <h5>Eller vill du hitta en sida? Klicka på menyn nedanför och då är det bara att välja!</h5>
+            <div class="dropdown">
+                <button class="dropbtn">Dina Sidor</button>
+                <div class="dropdown-content">
+                    <a href="/Profile/Index">Din Hemsida</a>
+                    <a href="/ProfileCV/Details/1">Din Profil</a>
+                    <a href="/CVBody/Details/2">Mer Information om Dig</a>
+                    <a href="/Educations">Utbildningar</a>
+                    <a href="/EmploymentHistories">Karriär</a>
+                    <a href="/Languages/Details/1">Språk</a>
+                    <a href="/Knowledges/Details/2">Kompetens</a>
+                    <a href="/FrontEndSkills/Edit/2">Front End</a>
+                    <a href="/BackEndSkills/Edit/2">Back End</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+

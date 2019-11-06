@@ -1,7 +1,49 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/* Global CSS */
+
+.body-global, .header-global {
+padding-left: 15%;
+width: 100%;
+font-family: "Helvetica", "Arial", sans-serif;
+text-align: center;
+background-color: #F6F7F8;
+border: 1px solid #D6D9DC;
+border-radius: 3px;
+width: 80%;
+margin: 20px 0;
+padding: 20px;
 }
+
+.nav-buttons {
+    margin-top: 15px;
+}
+
+.nav-buttons > li {
+    display: inline;
+    margin-right: 30px;
+}
+
+.btn-save {
+    color: black;
+    background-color: rgba(0, 122, 0, 0.2);
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #D6D9DC;
+}
+
+.btn-delete {
+    color: black;
+    background-color: rgba(122, 0, 0, 0.2);
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #D6D9DC;
+}
+
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -25,11 +67,12 @@ textarea {
 
 /*Drop down button freelancer for easy access to each page*/
 
-.dropbtn {
+.dropbtn, .btn-default {
     background-color: #808080;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
     border: none;
 }
 
@@ -38,7 +81,7 @@ textarea {
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content  {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -64,5 +107,57 @@ textarea {
 
 .dropdown:hover .dropbtn {
     background-color: #000000;
+}
+
+/*Log in Freelance CSS*/
+
+.login-box {
+    padding-left: 15%;
+    width: 100%;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.login-box-header, .login-input {
+    text-align: center;
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 80%;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+form label, form input, form button, textarea, {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    border: 0;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+
+.form-row textarea {
+    min-height: 7px;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;    
+}
+
+
+form input {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    width: 100%;
+    padding: 7px;
+    font-size: 1em;
+    align-content: center;
+}
+
+.form-row button:hover {
+    background-color: #76AEED;
+}
+
+.form-row button:active {
+    background-color: #407FC7;
 }
 
