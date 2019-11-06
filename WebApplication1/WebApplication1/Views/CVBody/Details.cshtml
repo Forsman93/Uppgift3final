@@ -84,3 +84,15 @@
     <li> <a class="btn btn-default" @Html.ActionLink("Nästa sidan, dina utbildningar 🢂", "Index", "Educations")</a>
 </ul>
 
+@helper ProfileLimit(string input)
+{
+    int length = 150;
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}

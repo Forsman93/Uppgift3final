@@ -79,3 +79,16 @@
     <li> <a class="btn btn-default" @Html.ActionLink("🢀 Tillbaka till Mer Information om Dig", "/Details/2", "CVBody")</a>
     <li> <a class="btn btn-default" @Html.ActionLink("Nästa Sidan, Karriär 🢂", "Index", "EmploymentHistories")</a>
 </ul>
+
+@helper ProfileLimit(string input)
+{
+    int length = 150;
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
