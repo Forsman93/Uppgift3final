@@ -1,27 +1,39 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Log In";
 }
 
-<h2>Index</h2>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-<form action="action_page.php" method="post">
+<div class="login-box">
 
-    <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+    <header class='login-box-header'>
+        <h1>Kund? <br /> Logga in!</h1>
+    </header>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-    </div>
+    <form name="login-frilanser">
 
-    <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-</form>
+        <div class="login-input">
+            <label for="email">Epostadress</label>
+            <br />
+            <input type="text" name="epostadress" id="emailaddress" placeholder="exampel@exampel.com" />
+
+            <br />
+            <br />
+
+            <label for="password">Lösenord</label>
+            <br />
+            <input type="password" name="password" id="password" />
+
+            <br />
+            <br />
+
+            <p><a class="btn btn-default" @Html.ActionLink("Logga in", "Index", "CVs")</a></p>
+        </div>
+
+    </form>
+
+
+
+</div>
