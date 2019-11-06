@@ -140,6 +140,7 @@
     <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogInFrilanserController.cs" />
+    <Compile Include="Controllers\PersonalInformationsController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProfileCVController.cs" />
     <Compile Include="Global.asax.cs">
@@ -260,7 +261,6 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\CVs\Create.cshtml" />
     <Content Include="Views\CVs\Delete.cshtml" />
-    <Content Include="Views\CVs\Details.cshtml" />
     <Content Include="Views\CVs\Edit.cshtml" />
     <Content Include="Views\CVs\Index.cshtml" />
     <Content Include="Views\Profile\Details.cshtml" />
@@ -284,6 +284,13 @@
     <Content Include="Views\FrontEndSkills\Edit.cshtml" />
     <Content Include="Views\BackEndSkills\Edit.cshtml" />
     <Content Include="Views\LogInFrilanser\LogInFrilanser.cshtml" />
+    <Content Include="Views\PersonalInformations\Create.cshtml" />
+    <Content Include="Views\PersonalInformations\Delete.cshtml" />
+    <Content Include="Views\PersonalInformations\Details.cshtml" />
+    <Content Include="Views\PersonalInformations\Edit.cshtml" />
+    <Content Include="Views\PersonalInformations\Index.cshtml" />
+    <Content Include="Views\Educations\Details.cshtml" />
+    <Content Include="Views\CVs\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

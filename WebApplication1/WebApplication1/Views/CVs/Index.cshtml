@@ -4,32 +4,28 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2><strong>Sök bland Frilansare</strong></h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
     @using (Html.BeginForm("Index", "CVs", FormMethod.Get))
     {
-    <p>
-        Search: @Html.TextBox("Searchstring") <br />
-        <input type="submit" value="Search" />
-    </p>
+    <div>
+        <b>Vilka kunskaper letar du efter?</b> @Html.TextBox("Searchstring") <input type="submit" value="Sök" />
+    </div>
 }
 
 
 
-    </p>
     <table class="table">
         <tr>
-
             <th>
-                @Html.DisplayNameFor(model => model.DriversLicense)
+                @Html.DisplayNameFor(model => model.Freelancer.PersonalInformation.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Freelancer.PersonalInformation.LastName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nationality)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CityOfBirth)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Profile)
@@ -37,45 +33,50 @@
             <th>
                 @Html.DisplayNameFor(model => model.CoreAbilities)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MediaLinks)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Freelancer.Freelancer_ID)
-            </th>
-            <th></th>
+
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DriversLicense)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nationality)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CityOfBirth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Profile)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CoreAbilities)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MediaLinks)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Freelancer.Freelancer_ID)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CV_ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.CV_ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CV_ID })
-                </td>
-            </tr>
+        <tr>
+
+            <td>
+                 @Html.DisplayFor(modelItem => item.Freelancer.PersonalInformation.FirstName, "Id") 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Freelancer.PersonalInformation.LastName, "Id")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.Raw(ProfileLimit(item.Profile))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoreAbilities)
+            </td>
+            <td>
+                @Html.ActionLink("Besök CV", "Details", new { id = item.CV_ID },  new { Target = "_blank" }) 
+            </td>
+
+
+
+            @helper ProfileLimit(string input)
+            {
+            int length = 150;
+            if (input.Length <= length)
+            {
+                 @input
+            }
+            else
+            {
+                    @input.Substring(0, length)<text>...</text>
+            }
+            }
+
+
+
+        </tr>
         }
 
     </table>
