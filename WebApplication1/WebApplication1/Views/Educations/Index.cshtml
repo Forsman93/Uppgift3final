@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutFreeLance.cshtml";
 }
 
 <h2>Dina Utbildningar</h2>
@@ -76,5 +77,5 @@
         </div>
     </li>
     <li> <a class="btn btn-default" @Html.ActionLink("🢀 Tillbaka till Mer Information om Dig", "/Details/2", "CVBody")</a>
-    <li> <a class="btn btn-default" @Html.ActionLink("Nästa Sidan, Karrier 🢂", "Index", "EmploymentHistories")</a>
+    <li> <a class="btn btn-default" @Html.ActionLink("Nästa Sidan, Karriär 🢂", "Index", "EmploymentHistories")</a>
 </ul>

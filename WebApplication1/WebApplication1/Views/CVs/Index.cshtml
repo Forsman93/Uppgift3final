@@ -2,9 +2,13 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
 }
 
 <h2><strong>Sök bland Frilansare</strong></h2>
+
+
+
 
 <p>
     @using (Html.BeginForm("Index", "CVs", FormMethod.Get))
