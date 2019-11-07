@@ -64,38 +64,24 @@
 
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
-<ul class="nav-buttons">
-    <li>
-        <div class="dropdown">
-            <button class="dropbtn">Dina Sidor</button>
-            <div class="dropdown-content">
-                <a href="/Profile/Index">Din Hemsida</a>
-                <a href="/ProfileCV/Details/1">Din Profil</a>
-                <a href="/CVBody/Details/2">Mer Information om Dig</a>
-                <a href="/Educations">Utbildningar</a>
-                <a href="/EmploymentHistories">Karriär</a>
-                <a href="/Languages/Details/1">Språk</a>
-                <a href="/Knowledges/Details/2">Kompetens</a>
-                <a href="/FrontEndSkills/Edit/2">Front End</a>
-                <a href="/BackEndSkills/Edit/2">Back End</a>
-            </div>
-        </div>
-    </li>
+
+<ul class="nav-buttons">    
     <li> <a class="btn btn-default" @Html.ActionLink("🢀 Tillbaka till din hemsida!", "Index", "Profile")</a>
     <li> <a class="btn btn-default" @Html.ActionLink("Ändra", "Edit", new { id = Model.PersonalInformation_ID })</a>
     <li> <a class="btn btn-default" @Html.ActionLink("Nästa sidan, Mer information om dig! 🢂", "/Details/2", "CVBody")</a>
 </ul>
 
 
-@helper ProfileLimit(string input)
-{
-    int length = 150;
-    if (input.Length <= length)
+
+    @helper ProfileLimit(string input)
     {
-        @input
+        int length = 150;
+        if (input.Length <= length)
+        {
+            @input
+        }
+        else
+        {
+            @input.Substring(0, length)<text>...</text>
+        }
     }
-    else
-    {
-        @input.Substring(0, length)<text>...</text>
-    }
-}
