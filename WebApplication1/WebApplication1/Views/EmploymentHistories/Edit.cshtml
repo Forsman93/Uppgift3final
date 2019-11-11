@@ -83,3 +83,16 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+@helper ProfileLimit(string input)
+{
+    int length = 150;
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
