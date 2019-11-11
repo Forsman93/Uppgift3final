@@ -5,18 +5,20 @@
     Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
 }
 
-<h2><strong>Sök bland Frilansare</strong></h2>
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+ 
+<div class="header-centering"><h2><strong>Sök bland Frilansare</strong></h2></div>
 
-
-
-
-<p>
-    @using (Html.BeginForm("Index", "CVs", FormMethod.Get))
-    {
-    <div>
+@using (Html.BeginForm("Index", "CVs", FormMethod.Get))
+{
+    <div class="Search-btn">
         <b>Vilka kunskaper letar du efter?</b> @Html.TextBox("Searchstring") <input type="submit" value="Sök" />
     </div>
 }
+
+
+<p>
+
 
 
 
@@ -42,45 +44,46 @@
 
         @foreach (var item in Model)
         {
-        <tr>
+            <tr>
 
-            <td>
-                 @Html.DisplayFor(modelItem => item.Freelancer.PersonalInformation.FirstName, "Id") 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Freelancer.PersonalInformation.LastName, "Id")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nationality)
-            </td>
-            <td>
-                @Html.Raw(ProfileLimit(item.Profile))
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CoreAbilities)
-            </td>
-            <td>
-                @Html.ActionLink("Besök CV", "Details", new { id = item.CV_ID },  new { Target = "_blank" }) 
-            </td>
-
-
-
-            @helper ProfileLimit(string input)
-            {
-            int length = 150;
-            if (input.Length <= length)
-            {
-                 @input
-            }
-            else
-            {
-                    @input.Substring(0, length)<text>...</text>
-            }
-            }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Freelancer.PersonalInformation.FirstName, "Id")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Freelancer.PersonalInformation.LastName, "Id")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td>
+                    @Html.Raw(ProfileLimit(item.Profile))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoreAbilities)
+                </td>
+                <td>
+                    @Html.ActionLink("Besök CV", "Details", new { id = item.CV_ID }, new { Target = "_blank" })
+                </td>
 
 
 
-        </tr>
+                @helper ProfileLimit(string input)
+                {
+                    int length = 150;
+                    if (input.Length <= length)
+                    {
+                        @input
+                    }
+                    else
+                    {
+                        @input.Substring(0, length)<text>...</text>
+                    }
+                }
+
+
+
+            </tr>
         }
 
     </table>
+</p>

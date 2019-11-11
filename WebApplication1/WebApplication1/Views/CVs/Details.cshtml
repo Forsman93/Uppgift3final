@@ -8,79 +8,90 @@
 <h2><strong>Detaljer om @Html.DisplayFor(model => model.Freelancer.PersonalInformation.FirstName, "Id") CV</strong></h2>
 
 <h4>Namn: <br /> <strong>@Html.DisplayFor(model => model.Freelancer.PersonalInformation.FirstName, "Id") @Html.DisplayFor(model => model.Freelancer.PersonalInformation.LastName, "Id")</strong> </h4>
-                    <h5><b>Om mig</b></h5>
+                    
+                    <body>
+                        <div class="CV-details">
+                            <div>
+                                <h5><b>Om mig</b></h5>
+                                <ul>
+                                    <li>
+                                        <b>@Html.DisplayNameFor(model => model.CoreAbilities)</b> <p>@Html.DisplayFor(model => model.CoreAbilities)</p>
+                                    </li>
+                                    <li>
+                                        <b>@Html.DisplayNameFor(model => model.Nationality)</b> <p>@Html.DisplayFor(model => model.Nationality)</p>
+                                    </li>
+                                    <li>
+                                        <b>@Html.DisplayNameFor(model => model.CityOfBirth)</b> <p>@Html.DisplayFor(model => model.CityOfBirth)</p>
+                                    </li>
+                                    <li>
+                                        <b>@Html.DisplayNameFor(model => model.DriversLicense)</b> <p>@Html.DisplayFor(model => model.DriversLicense)</p>
+                                    </li>
+                                </ul>
+                            </div>
 
-                    <ul>
-                        <li>
-                            <b>@Html.DisplayNameFor(model => model.CoreAbilities)</b> <p>@Html.DisplayFor(model => model.CoreAbilities)</p>
-                        </li>
-                        <li>
-                            <b>@Html.DisplayNameFor(model => model.Nationality)</b> <p>@Html.DisplayFor(model => model.Nationality)</p>
-                        </li>
-                        <li>
-                            <b>@Html.DisplayNameFor(model => model.CityOfBirth)</b> <p>@Html.DisplayFor(model => model.CityOfBirth)</p>
-                        </li>
-                        <li>
-                            <b>@Html.DisplayNameFor(model => model.DriversLicense)</b> <p>@Html.DisplayFor(model => model.DriversLicense)</p>
-                        </li>
-                    </ul>
+                            <div>
+                                <h5><b>Utbildning</b></h5>
 
-                        <h5><b>Utbildning</b></h5>      
+                                <ul>
+                                    @foreach (var item in Model.Education)
+                                    {
 
-                    <ul>
-                            @foreach (var item in Model.Education)
-                            {
-                                
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.SchoolName)</b> <p>@Html.DisplayFor(modelItem => item.SchoolName, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.Subject)</b> <p>@Html.DisplayFor(modelItem => item.Subject, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.Degree)</b> <p>@Html.DisplayFor(modelItem => item.Degree, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.StartDate)</b> <p>@Html.DisplayFor(modelItem => item.StartDate, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.EndDate)</b> <p>@Html.DisplayFor(modelItem => item.EndDate, "Id")</p> 
-                                    </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.SchoolName)</b> <p>@Html.DisplayFor(modelItem => item.SchoolName, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.Subject)</b> <p>@Html.DisplayFor(modelItem => item.Subject, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.Degree)</b> <p>@Html.DisplayFor(modelItem => item.Degree, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.StartDate)</b> <p>@Html.DisplayFor(modelItem => item.StartDate, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.EndDate)</b> <p>@Html.DisplayFor(modelItem => item.EndDate, "Id")</p>
+                                        </li>
 
-                            }
-                    </ul>
+                                    }
+                                </ul>
+                            </div>
 
-                        <h5><b>Tidigare Arbetserfarenheter</b></h5>      
+                            <div>
+                                <h5><b>Tidigare Arbetserfarenheter</b></h5>
 
-                    <ul>
-                            @foreach (var item in Model.EmploymentHistory)
-                            {
-                                
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.PlaceOfWork)</b> <p>@Html.DisplayFor(modelItem => item.PlaceOfWork, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.Role)</b> <p>@Html.DisplayFor(modelItem => item.Role, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.Description)</b> <p>@Html.DisplayFor(modelItem => item.Description, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.StartDate)</b> <p>@Html.DisplayFor(modelItem => item.StartDate, "Id")</p> 
-                                    </li>
-                                    <li>
-                                        <b>@Html.DisplayNameFor(modelItem => item.EndDate)</b> <p>@Html.DisplayFor(modelItem => item.EndDate, "Id")</p> 
-                                    </li>
+                                <ul>
+                                    @foreach (var item in Model.EmploymentHistory)
+                                    {
 
-                            }
-                    </ul>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.PlaceOfWork)</b> <p>@Html.DisplayFor(modelItem => item.PlaceOfWork, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.Role)</b> <p>@Html.DisplayFor(modelItem => item.Role, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.Description)</b> <p>@Html.DisplayFor(modelItem => item.Description, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.StartDate)</b> <p>@Html.DisplayFor(modelItem => item.StartDate, "Id")</p>
+                                        </li>
+                                        <li>
+                                            <b>@Html.DisplayNameFor(modelItem => item.EndDate)</b> <p>@Html.DisplayFor(modelItem => item.EndDate, "Id")</p>
+                                        </li>
 
-                        <h5><b>Profil</b></h5>
-                        <div>
-                            <p>
-                                 @Html.DisplayFor(model => model.Profile)
-                            </p>
+                                    }
+                                </ul>
+                            </div>
                         </div>
+                    </body>
+
+                       
+                    <div>
+                        <h5><b>Profil</b></h5>
+                        <p>
+                            @Html.DisplayFor(model => model.Profile)
+                        </p>
+                    </div>
 
            
                 <div>

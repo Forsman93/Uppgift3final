@@ -12,6 +12,19 @@ width: 80%;
 margin: 20px 0;
 padding: 20px;
 }
+.header-centering{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+.search-body{
+    margin: 80px;
+}
+
+.CV-details{
+    display: inline-block;
+    float: left;
+}
 
 .nav-buttons {
     margin-top: 15px;
